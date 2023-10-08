@@ -43,14 +43,23 @@ const closewindow = function(){
     mwindow.classList.add("hidden");
 }
 
+const escpress = function(event){
+    console.log(event.key);
+    if(event.key === 'Escape' && !moverlay.classList.contains("hidden") && !mwindow.classList.contains("hidden")){
+        closewindow();
+    }
+}
+
 
 for (let index = 0; index < buttonList.length; index++) {
     buttonList[index].addEventListener('click',opendwindow);
 }
 
-mclose.addEventListener('click',closewindow);
+mclose.addEventListener('click', closewindow);
 
-moverlay.addEventListener('click',closewindow);
+moverlay.addEventListener('click', closewindow);
+
+document.addEventListener('keydown', escpress);
 
 
 // VERY VERY IMPORTANT 💥💥💥
