@@ -1,0 +1,107 @@
+body {
+    padding:1rem;
+
+    background-color: rgb(36, 35, 35);
+    box-sizing: border-box;
+
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Top of the Page */
+
+.nav{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content:space-between;
+}
+
+.button{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    background-color:white;
+    color: black;
+}
+
+.button:hover{
+    background-color: rgb(213, 213, 213);
+}
+
+.description{
+    padding: 1.5rem;
+}
+
+/* Main Section */
+
+.heading{
+    width: fit-content;
+    padding: 1rem;
+    
+    margin: 1rem auto 1rem auto;
+    
+    font-size: 3rem;
+}
+
+.question-mark{
+    width:fit-content;
+    padding:3rem;
+    margin: 4rem auto 1rem auto;
+    
+    font-size: 5rem;
+    color:black;
+    background-color: white;
+}
+
+/* section */
+
+.section{
+    width: 60%;
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkbutton{
+    display: block;
+    width:fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem;
+    background-color:white;
+    font-size: 1.2rem;
+    font-family: 'Press Start 2P', cursive;
+    color: black;
+}
+
+.checkbutton:hover{
+    background-color: rgb(213, 213, 213);
+}
+
+#currentguess{
+    border-color: black;
+    border-style: solid;
+    border-width: 0.2rem;
+    padding:2rem;
+    margin:2rem;
+    width:15rem;
+    height:7rem;
+    font-size: 5rem;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.scorebox{
+    padding: 1rem;
+}
+
+.scorebox > p{
+    padding: 2rem;
+    font-size: 1.5rem;
+}
+
+.currentscore, .highscore{
+    display:inline;
+}
