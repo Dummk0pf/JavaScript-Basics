@@ -4,12 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pig-Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css-reset.css">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-
     
+    <div class="container">
+
+        <div class="action">
+            <button class="newgame button">➰New Game</button>
+            <img class="dice" src="res/dice-1.png" alt="dice-with-value-1" srcset="">
+            <button class="roll button">🎲 Roll Dice</button>
+            <button class="hold button">✋ Hold</button>
+        </div>
+        
+        <div class="player1 white">
+            <h1>Player 1</h1>
+            <p class="score1">0</p>
+            <div class="current">
+                <p>CURRENT</p>
+                <p class="currentscore_1">0</p>
+            </div>
+        </div>
+        
+        <div class="player2 grey">
+            <h1>Player 2</h1>
+            <p class="score2">0</p>
+            <div class="current">
+                <p>CURRENT</p>
+                <p class="currentscore_2">0</p>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="overlay"></div>
+    
+    <div class="winbox">
+        <h1 class="winmessage">✨✨ PLAYER 1 WINS !!!! ✨✨</h1>
+        <button class="newgame endgame button">➰New Game</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
