@@ -31,7 +31,7 @@ body{
     background-color: white;
     border: none;
     border-radius: 3rem;
-    box-shadow: 1px; 
+
 }
 
 .dice{
@@ -48,8 +48,15 @@ body{
 }
 
 .button:hover{
+    cursor: pointer;
     animation-name: hoveranim;
-    animation-duration: 0.7s;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.button:active{
+    animation-name: pressanim;
+    animation-duration: 0.2s;
     animation-timing-function: ease-in-out;
 }
 
@@ -76,6 +83,8 @@ body{
 
     color: black;
     border-radius: 1rem 0rem 0rem 1rem;
+
+    transition: all 0.75s;
 }
 
 .player2{
@@ -87,14 +96,15 @@ body{
     
     color: black;
     border-radius: 0rem 1rem 1rem 0rem;
+    transition: all 0.75s;
 }
 
 .white{
-    background-color: rgba(255, 255, 255, 0.709);
+    background-color: rgba(255, 255, 255, 0.769);
 }
 
 .grey{
-    background-color: rgba(255, 255, 255, 0.505);
+    background-color: rgba(255, 255, 255, 0.389);
 }
 
 .score1, .score2{
@@ -131,7 +141,8 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(5px);
+    animation: fade_in 1s ease-in-out;
+    backdrop-filter: blur(7px);
 }
 
 .winbox{
@@ -148,27 +159,21 @@ body{
     margin-right: auto;
 
     text-align: center;
-
-    background-color: white;
     border-radius: 1rem;
+
 }
 
 .winmessage{
     margin-top: 10rem;
-    margin-bottom: 5rem;
     font-size: 2rem;
-    border-width: 1rem;
-    border-color: black;
 }
 
 .winbox > .endgame{
     width: 12rem;
     height: 4rem;
     font-size: 1.2rem;
-    border-radius: 0.5rem;
-    border: 0.1rem solid;
-    background: rgb(0,219,222);
-    background: linear-gradient(90deg, rgba(0, 218, 222, 0.284) 0%, rgba(251, 0, 255, 0.37) 100%);
+    border-radius: 2rem;
+    background-color: white;
 }
 
 @keyframes hoveranim{
@@ -182,5 +187,33 @@ body{
 
     100%{
         background-color: white;
+    }
+}
+
+@keyframes pressanim {
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(0.95);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes fade_in {
+    0%{
+        backdrop-filter: none;
+    }
+    
+    50%{
+        backdrop-filter: blur(3px);
+    }
+
+    100%{
+        backdrop-filter: blur(7px);
     }
 }

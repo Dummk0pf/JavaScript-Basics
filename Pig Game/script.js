@@ -1,6 +1,10 @@
+// Use getelementbyid and getelementbyclassname for better speeds
+
+"use-strict";
+
 const PLAYER_ONE = 1;
 const PLAYER_TWO = 2;
-const WIN_SCORE = 10;
+const WIN_SCORE = 20;
 
 const ngame = getObj("newgame");
 const egame = getObj("endgame");
@@ -45,12 +49,20 @@ function switchPlayer(player){
     const fromstate = player === PLAYER_ONE ? "white" : "grey";
     const toState = player === PLAYER_ONE ? "grey" : "white";
     
+    // can use toggle instead of add and remove 
+
     p_one.classList.remove(fromstate);
     p_one.classList.add(toState);
     
     p_two.classList.remove(toState);
     p_two.classList.add(fromstate);
 
+}
+
+function winEvent(player){
+    winmessage.textContent = `✨✨ PLAYER ${player} WINS !!!! ✨✨`;
+    winbox.style.display = "block";
+    overlay.style.display = "block";
 }
 
 const rollevent = function(){
@@ -67,9 +79,8 @@ const rollevent = function(){
             pcscore1 += number;
             cscore1.textContent = pcscore1;
             if(pcscore1 >= WIN_SCORE){
-                winmessage.textContent = "✨✨ PLAYER 1 WINS !!!! ✨✨";
-                winbox.style.display = "block";
-                overlay.style.display = "block";
+                console.log("WON")
+                winEvent(cplayer);
             }
         }
     }
@@ -84,9 +95,8 @@ const rollevent = function(){
             pcscore2 += number;
             cscore2.textContent = pcscore2;
             if(pcscore2 >= WIN_SCORE){
-                winmessage.textContent = "✨✨ PLAYER 2 WINS !!!! ✨✨";
-                winbox.style.display = "block";
-                overlay.style.display = "block";
+                console.log("WON")
+                winEvent(cplayer);
             }
         }
     }
@@ -99,14 +109,24 @@ const holdevent = function(){
         score1.textContent = totscore1;
         cscore1.textContent = 0;
         pcscore1 = 0;
-        cplayer = PLAYER_TWO;
+        if(pcscore1 >= WIN_SCORE){
+            winEvent(cplayer);
+        }
+        else{
+            cplayer = PLAYER_TWO;
+        }
     }
     else if(cplayer == PLAYER_TWO){
         totscore2 += pcscore2;
         score2.textContent = totscore2;
         cscore2.textContent = 0;
         pcscore2 = 0;
-        cplayer = PLAYER_ONE;
+        if(pcscore2 >= WIN_SCORE){
+            winEvent(cplayer);
+        }
+        else{
+            cplayer = PLAYER_ONE;
+        }
     }
 }
 
