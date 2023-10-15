@@ -3,7 +3,10 @@
 body{
     width: 100vw;
     height: 100vh;
+    background: rgb(233,79,79);
+    background: linear-gradient(43deg, rgba(233,79,79,1) 0%, rgba(243,138,38,1) 52%, rgba(176,86,76,1) 100%);
 
+    color: white;
     font-family: 'Montserrat', monospace;
 }
 
@@ -17,13 +20,14 @@ body{
     padding: 1rem;
 
     text-align: center;
-    border: 0.1rem solid black;
     border-radius: 1rem;
-    box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.361);
-    background-color: aquamarine;
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.361);
+    /* background-color: aquamarine; */
 }
 
     .bank-name{
+        margin-top: 1rem;
+
         font-size: 2rem;
         font-weight: 100;
     }
@@ -35,14 +39,40 @@ body{
     .loginbox{
         width: fit-content;
         height: fit-content;
+        margin-top: 2rem;
         margin-left: auto;
         margin-right: auto;
+
+        font-size: 2rem;
     }
 
-        #login-name{
-            display: block;
+        .loginbox > p{
+            margin-bottom: 1rem;
         }
 
-        #login-password{
+        .inputbox{
             display: block;
+            width: 20rem;
+            height: 3rem;
+    
+            margin:1rem;
+
+            text-align: center;
+            font-size: 1.5rem;
+            font-family: 'Montserrat', monospace;
+    
+            border: none;
+            border-radius: 1rem;
+            caret: none;
+            caret-shape:underscore;
+            transition: background-color 1s ease-in-out;
+            background-color: rgba(255, 255, 255, 0.114);
+        }
+        
+        .inputbox:hover{
+            background-color: rgba(255, 255, 255, 0.249);
+        }
+        
+        .inputbox:focus{
+            outline: none;
         }
