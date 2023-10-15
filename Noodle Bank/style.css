@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+body{
+    width: 100vw;
+    height: 100vh;
+
+    font-family: 'Montserrat', monospace;
+}
+
+.container{
+    width: fit-content;
+    height: fit-content;
+
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    padding: 1rem;
+
+    text-align: center;
+    border: 0.1rem solid black;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.361);
+    background-color: aquamarine;
+}
+
+    .bank-name{
+        font-size: 2rem;
+        font-weight: 100;
+    }
+
+    .bank-logo{
+        width:4rem;
+    }
+
+    .loginbox{
+        width: fit-content;
+        height: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+        #login-name{
+            display: block;
+        }
+
+        #login-password{
+            display: block;
+        }
